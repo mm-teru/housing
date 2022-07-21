@@ -1,0 +1,1435 @@
+@charset "UTF-8";
+/*ウィンドウ幅が480px以下の場合に適用するCSS*/
+@media screen and (max-width:480px)
+{
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Noto Serif JP', serif;
+    }
+    header {
+        width: 100%;
+        position: relative;
+    }
+    
+    /*ハンバーガーメニュー*/
+    .menu-btn {
+        position: fixed;
+        top: 6vw;
+        right: 2vw;
+        display: flex;
+        height: 4.5vw;
+        width: 16vw;
+        justify-content: center;
+        align-items: center;
+        z-index: 90;
+        cursor: pointer;
+        background-color: #fff;
+        background-color: rgba(255, 255, 255,0.5 );
+    }
+    .menu-btn span{
+        display: inline-block;
+        transition: all .4s;/*アニメーションの設定*/
+        position: absolute;
+        height: 0.5vw;
+        width: 14vw;
+        background-color: #000;
+        opacity: 1;
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    
+    .menu-btn span:nth-child(1) {
+        top: 1.5vw;
+    }
+    .menu-btn span:nth-child(2) {
+        top: 2.7vw;
+    }
+    /*クリックでバツ印に変わる*/
+    #menu-btn-check:checked ~ .menu-btn span:nth-child(1) {
+        top: 1.5vw;
+        transform: translateY(0.4vw) rotate(-45deg);
+        background-color: #fff;
+    }
+    #menu-btn-check:checked ~ .menu-btn span:nth-child(2) {
+        top: 2.7vw;
+        transform: translateY(-0.4vw) rotate(45deg);
+        background-color: #fff;
+    }
+    #menu-btn-check:checked ~ .menu-btn {
+        height: 3.5vw;
+        background-color: transparent;
+    }
+    /*メニューリスト*/
+    .menu-content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0%;
+        right: 100%;
+        z-index: 80;
+        background-image: url(../image/menu_bg_sp.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        background-position: bottom;
+        transition: all 0.5s;/*アニメーション設定*/
+    }
+    .nav-logo {
+        width: 38vw;
+        margin-top: 16vw;
+        margin-left: 8vw;
+    }
+    .nav-logo a img {
+        width: 100%;
+    }
+    .menu-content nav {
+        width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vw;
+    }
+    .menu-content nav ul {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .menu-content nav ul li {
+        list-style: none;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        margin-top: 8vw;
+    }
+    .menu-content nav ul li a {
+        position: relative;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        color:#ffffff;
+        text-decoration: none;
+        position: relative;
+        writing-mode: vertical-rl;
+        border-left: 1px solid transparent;
+        margin-left: 0.5vw;
+    }
+    /*ホバー　ボーダー*/
+    .menu-content nav ul li a::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.05vw;
+        height: 100%;
+        background-color: #fff;
+        transition: all .3s;
+        transform: scale(1, 0);
+        transform-origin: top;
+    }
+    .menu-content nav ul li a:hover::after {
+        transform: scale(1, 1);/*X方向にスケール拡大*/
+    }
+    /*終了*/
+    .menu-content nav ul li a p {
+        font-size: 3vw;
+    }
+    .menu-content nav ul li a p strong {
+        font-size: 5vw;
+    }
+    /*ボタンを押したらメニューが開く*/
+    #menu-btn-check:checked ~ .menu-content {
+        right: 0;/*メニューを画面内へ*/
+    }
+    .nav-wrapper {
+        display: block;
+    }
+    /*ナビの中のsns*/
+    .nav-sns {
+        display: flex;
+        width: 68vw;
+        margin-top: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav-sns a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 3.5vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+    .nav-sns a img {
+        width: 5vw;
+        margin-right: 2vw;
+    }
+    /*ナビの中のアドレス*/
+    .nav-address {
+        width: 40vw;
+        margin-top: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav-address p:nth-child(1) {
+        color: #fff;
+        font-size: 3vw;
+    }
+    .nav-address p {
+        color: #fff;
+        margin-top: 2vw;
+        font-size: 2.5vw;
+        text-align: center;
+    }
+    /*ハンバーガーメニュー　終了*/   
+    
+    
+    header .top-wrapper {
+        display: block;
+    }
+    header .top-left-box {
+        position: relative;
+    }
+    
+    .head-logo {
+        position: absolute;
+        top: 20vw;
+        left: 10vw;
+        z-index: 10;
+        width: 40vw;
+    }
+    .head-logo img {
+        width: 100%;
+    }
+    
+    /*左画面アニメーション開始*/
+    .slide {
+        position: relative;
+        width: 100%;
+        height: 100vw;
+        overflow: hidden;
+    }
+    .slide::before {
+        background: linear-gradient(180deg, transparent, mistyrose);
+    }
+    .slide img {
+        width: 100%;
+    }
+    .slide:before {
+        animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
+        background-image: url(../image/fvimg_1-2.jpg);
+        background-size: cover;
+        bottom: 0;
+        content: '';
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    @keyframes img-wrap {
+        0%   { transform: translateX(-100%); }
+        50%  { transform: translateX(0);}
+        100% { transform: translateX(100%); }
+    }
+/*アニメーション終了*/
+    /*TOP画像　グラデーション*/
+    header .top-wrapper .top-left-box .slide{
+	   max-width: 100%;
+    }
+
+    header .top-wrapper .top-left-box .slide::after {
+	   content: '';
+	   position: absolute;
+	   top: 0;
+	   left: 0;
+	   width: 100%;
+	   height: 100vw;
+	   background-image: linear-gradient(0deg,hsla(0,0%,100%,.2),hsla(0,0%,100%,0));
+        z-index: 2;
+    }
+    /*グラデーション　終了*/
+    header .top-right-box {
+        
+    }
+    .top-right-box nav {
+        margin-left: 15vw;
+        margin-top: 2.8vw;
+    }
+    .top-right-box nav ul {
+        display: flex;
+        display: none;
+    }
+    .top-right-box nav ul li {
+        list-style-type: none;  
+    }
+    .top-right-box nav ul li a {
+        display: block;
+        margin-right: 2vw;
+        font-size: 0.6vw;
+        text-decoration: none;
+        color: inherit;
+        font-style: normal;
+        font-weight: 400;
+    }
+    .top-right-box nav ul li a img {
+        width: 1.2vw;
+        vertical-align: middle;
+        padding-right: 0.5vw;
+        padding-bottom: 0.3vw;
+    }
+    /*右側　アニメーション*/
+    .top-right-box .slide2 {
+        position: relative;
+        width: 38vw;
+        height: 35vw;
+        margin-left: auto;
+        margin-top: 10vw;
+        overflow: hidden;
+    }
+    
+    .top-right-box .slide2 img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .slide2:before {
+        animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
+        background-image: url(../image/fvimg_2-2.jpg);
+        background-size: cover;
+        bottom: 0;
+        content: '';
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    @keyframes img-wrap {
+        0%   { transform: translateX(-100%); }
+        50%  { transform: translateX(0);}
+        100% { transform: translateX(100%); }
+    }
+    .top-title {
+        display: flex;
+        position: absolute;
+        top: 75vw;
+        left: 35vw;
+        z-index: 10;
+    }
+    .top-title h1 {
+        font-size: 7vw;
+        letter-spacing: .2em;
+        writing-mode: vertical-rl;
+    }
+    .top-title p {
+        font-size: 0.8vw;
+        writing-mode: tb-rl;
+        line-height: 3;
+    }
+    /*二つ目の画像部分*/
+    .second-wrapper {
+        display: flex;
+        position: relative;
+    }
+    
+    .second-left-box {
+        position: absolute;
+        bottom: 55vw;
+        width: 32%;
+        margin-top: 5vw;
+    }
+    
+    /*左アニメーション開始*/
+    .second-slide {
+        width: 100%;
+        height: 33.5vw;
+        position: relative;
+        overflow: hidden;
+    }
+    .second-slide img {
+        width: 100%;
+    }
+    .second-slide:before {
+        animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
+        background-image: url(../image/fvimg_3-3.jpg);
+        background-size: cover;
+        bottom: 0;
+        content: '';
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    @keyframes img-wrap {
+        0%   { transform: translateX(-100%); }
+        50%  { transform: translateX(0);}
+        100% { transform: translateX(100%); }
+    }
+    /*アニメーション終了*/
+    
+    .second-right-box {
+        width: 70%;
+    }
+    
+    /*アニメーション開始*/
+    .second-slide2 {
+        width: 70vw;
+        height: 45vw;
+        position: relative;
+        overflow: hidden;
+        margin-top: 15vw;
+        margin-left: 16vw;
+    }
+    .second-slide2 img {
+        width: 100%;
+    }
+    .second-slide2:before {
+        animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
+        background-image: url(../image/fvimg_4-1.jpg);
+        background-size: cover;
+        bottom: 0;
+        content: '';
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    @keyframes img-wrap {
+        0%   { transform: translateX(-100%); }
+        50%  { transform: translateX(0);}
+        100% { transform: translateX(100%); }
+    }
+    /*メイン　お知らせ*/
+    .news {
+        margin-top: 15vw;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 15vw;
+    }
+    .news-title {
+        display: flex;
+        margin-right: 1vw;
+    }
+    .news-title h2 {
+        writing-mode: vertical-rl;
+        font-size: 5vw;
+        letter-spacing: .3em;
+        font-weight: 600;
+    }
+    .news-title p {
+        writing-mode: vertical-rl;
+        font-size: 0.8vw;
+    }
+    .news ul {
+        display: flex;
+        width: 90vw;
+    }
+    .news ul li {
+        list-style-type: none;
+    }
+    .news ul li a {
+        position: relative;
+        display: block;
+        padding-top: 2vw;
+        text-decoration: none;
+        color: #000;
+        border-top: 1px solid #ccc;
+    }
+    .news ul li a p {
+        width: 80vw;
+        margin-left: 5vw;
+        line-height: 2em;
+    }
+    /*ホバーアニメーション*/
+    .news ul li a::after {
+        content: '';
+        /*絶対配置で線の位置を決める*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*線の形状*/
+        width: 100%;
+        height: 1px;
+        background:#000;
+        /*アニメーションの指定*/
+        transition: all .3s;
+        transform: scale(0, 1);/*X方向0、Y方向1*/
+        transform-origin: left top;/*左上基点*/
+    }
+    
+    /*現在地を含むhoverの設定*/
+    .news li a:hover::after {
+        transform: scale(1, 1);/*X方向にスケール拡大*/
+    }
+    /*アニメーション終了*/
+    .news-text {
+        width: 88vw;
+        height: 60vw;
+    }
+    .news ul li p:first-child {
+        color: grey;
+        padding-bottom: 0.5vw;
+    }
+    .news ul li strong {
+        font-size: 2vw;
+        letter-spacing: .2em;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        margin-left: 5vw;
+    }
+    .news ul li p:nth-child(3) {
+        margin-top: 0.5vw;
+    }
+    /*矢印　アニメーション*/
+    .arrow {
+        position: absolute;
+        bottom: 8vw;
+        right: 10vw;
+        width: 5vw;
+    }
+    .arrow img {
+        width: 5vw; 
+        overflow: hidden;
+        object-position : right 50%;
+        transition: .3s;
+    } 
+    .news li a:hover .arrow img {
+        transition: .3s;
+        transform: translateX(20px);
+    }
+    /*建築事例*/
+    .work {
+        display: flex;
+        margin-bottom: 15vw;
+    }
+    .work-title {
+        writing-mode: vertical-rl;
+        margin-left: 2vw;
+        margin-right: 4.5vw;
+    }
+    .work-title h3 {
+        font-size: 5vw;
+        letter-spacing: .3em;
+        font-weight: 600;
+    }
+    .work-title p {
+         font-size: 0.8vw;
+    }
+    .work-wrapper {
+        display: flex;
+        width: 100%;
+    }
+    .work-wrapper div {
+        width: 26vw;
+        overflow: hidden;
+        margin-right: 1.5vw;
+    }
+    .work-wrapper img {
+        width: 200%;
+        margin: 0 -12vw;
+        margin-bottom: 1vw;
+        border-bottom: 4px solid transparent;
+    }
+    .work-wrapper a {
+        position: relative;
+        display: block;
+        color: #000;
+        text-decoration: none;
+    }
+     /*ホバーアニメーション*/
+    .work-wrapper a::after {
+        content: '';
+        /*絶対配置で線の位置を決める*/
+        position: absolute;
+        top: 37vw;
+        left: 0;
+        /*線の形状*/
+        width: 100%;
+        height: 4px;
+        background:#000;
+        /*アニメーションの指定*/
+        transition: all .3s;
+        transform: scale(0, 1);/*X方向0、Y方向1*/
+        transform-origin: left top;/*左上基点*/
+    }
+    
+    /*現在地を含むhoverの設定*/
+    .work-wrapper a:hover::after {
+        transform: scale(1, 1);/*X方向にスケール拡大*/
+    }
+    /*アニメーション　終了*/
+    
+    .title {
+        text-align: right;
+        color: gray;
+        font-size: 1.7vw;
+    }
+    .work-wrapper div strong {
+        font-weight: normal;
+        font-size: 1.9vw;
+        font-weight: 600;
+    }
+    .work-wrapper p:nth-child(4) {
+        padding-top: 1vw;
+        color: grey;
+        font-size: 1.7vw;
+    }
+    /*メイン　モデルハウス*/
+    .model-house {
+        position: relative;
+        margin-top: 8vw;
+        margin-bottom: 15vw;
+    }
+    .model-right-box {
+        display: flex;
+    }
+    .model-main {
+        width: 22vw;
+        display: flex;
+        margin-top: 3vw;
+    }
+    .model-content {
+        margin-left: 8vw;
+    }
+    .model-title {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+    }
+    .model-title h4 {
+        writing-mode: vertical-rl;
+        font-size: 5vw;
+        letter-spacing: .1em;
+    }
+    .model-title p {
+        writing-mode: vertical-rl;
+        font-size: 0.8vw;
+    }
+    .model-text {
+        width: 30vw;
+        line-height: 1.5;
+        display: flex;
+        margin-right: 5vw;
+    }
+    .model-text p {
+        font-size: 4vw;
+        writing-mode: vertical-rl;
+        letter-spacing: .1em;
+        line-height: 3.5vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        line-height: 6vw;
+    }
+    .model-right-box img:nth-child(2) {
+        width: 34vw;
+        height: 24vw;
+        margin-top: 7vw;
+        margin-left: auto;
+    }
+    /*ホバー　ボーダー*/
+    .model-next {
+        margin-top: 4vw;
+        margin-left: 2vw;
+    }
+    .model-next a {
+        position: relative;
+        display: block;
+        display: flex;
+        width: 18vw;
+        text-decoration: none;
+        color: #000;
+        border-top: 1px solid transparent;
+    }
+    .model-next a::after {
+        content: '';
+        /*絶対配置で線の位置を決める*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*線の形状*/
+        width: 100%;
+        height: 1px;
+        background:#000;
+        /*アニメーションの指定*/
+        transition: all .3s;
+        transform: scale(0, 1);/*X方向0、Y方向1*/
+        transform-origin: left top;/*左上基点*/
+    }
+    
+    /*現在地を含むhoverの設定*/
+    .model-next a:hover::after {
+        transform: scale(1, 1);/*X方向にスケール拡大*/
+    }
+    .model-next a p {
+        font-size: 3.5vw;
+        line-height: 2.5em;
+        margin-left: 1vw;
+    }
+    
+    /*矢印　ホバーアニメーション*/
+    .model-next a img {
+        width: 4vw;
+        overflow: hidden;
+        object-position : right 50%;
+        transition: .3s;
+        margin-bottom: 0.3vw;
+        margin-left: 0.5vw;
+    }
+    .model-next a:hover img {
+        transition: .3s;
+        transform: translateX(20px);
+    }
+    
+    .model-left-box img {
+        width: 85vw;
+    }
+    /*コンセプト部分*/
+    .concept {
+        background-image: url(../image/index_philosophy_bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .concept-text {
+        position: relative;
+        display: block;
+    }
+    .concept-title {
+        writing-mode: vertical-rl;
+        margin-top: 10vw;
+        margin-right: 4.5vw;
+        margin-left: 2vw;
+    }
+    .concept-title h5 {
+        font-size: 5vw;
+        letter-spacing: .1em;
+        font-weight: 600;
+    }
+    .concept-title p {
+        font-size: 0.8vw;
+    }
+    .concept-text-box {
+        position: absolute;
+        top: 10vw;
+        right: 10vw;
+        writing-mode: vertical-rl;
+    }
+    
+    .concept-text-box p:nth-child(1) {
+        width: 15vw;
+        height: 70vw;
+        font-size: .8vw;
+        margin-left: 6vw;
+    }
+    .concept-text-box p:nth-child(2) {
+        height: 58vw;
+        margin-left: 1.5vw;
+        margin-right: 2vw;
+        font-size: 3.5vw;
+    }
+    .concept-text-box p:nth-child(3) {
+        font-size: 6vw;
+        letter-spacing: .3em;
+        margin-left: 10vw;
+    }
+
+    .concept-text-box2 {
+        margin-top: 30vw;
+        margin-left: 5vw;
+    }
+    .concept-text-box2 p {
+        width: 91vw;
+        font-size: 3.5vw;
+        letter-spacing: .3em;
+        line-height: 2;
+        font-weight: 800;
+        
+    }
+    .concept-text-box2 p br {
+        display: none;
+        
+    }
+    /*一つ目*/
+    .concept-message {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        text-decoration: none;
+        width: 50vw;
+        height: 50vw;
+        margin-left: 48vw;
+        border-radius: 50%;
+    }
+    .concept-message-text {
+        display: flex;
+        height: 50vw;
+        width: 50vw;
+        background-image: url(../image/index_philosophy_1.jpg);
+        background-size: cover;
+        border-radius: 50%;
+        transition: transform .6s ease;
+    }
+    .concept-message:hover .concept-message-text {
+        transform: scale(1.1);
+    }
+    .concept-message p {
+        position: absolute;
+        right: 20vw;
+        top: 15vw;
+        writing-mode: vertical-rl;
+        color: #fff;
+        z-index: 2;
+    }
+    .concept-message p:nth-child(1) {
+        font-size: 4vw;
+        margin-right: 3vw;
+    }
+    .concept-message p:nth-child(2) {
+        font-size: 2vw;
+    }
+    .concept-message::before {
+        background: rgba(255, 255, 255, .2);/* マスクの色(黒の50%) */
+        bottom: 0;
+        content: '';
+        height: auto;
+        left: 0;
+        opacity: 0;/* 最初は透明（非表示） */
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity .6s ease;/* ゆっくりopacityのみへ変化させる */
+        width: 100%;
+        z-index: 1;
+    }
+    .concept-message:hover::before {
+        opacity: 1;
+    }
+    /*二つ目*/
+    .concept-quality {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        text-decoration: none;
+        width: 50vw;
+        height: 50vw;
+        margin-left: 3vw;
+        margin-top: -12vw;
+        border-radius: 50%;
+    }
+    .concept-quality-text {
+        display: flex;
+        height: 50vw;
+        width: 50vw;
+        background-image: url(../image/index_philosophy_2.jpg);
+        background-size: cover;
+        border-radius: 50%;
+        transition: transform .6s ease;
+    }
+    .concept-quality:hover .concept-quality-text {
+        transform: scale(1.1);
+    }
+    .concept-quality p {
+        position: absolute;
+        top: 17vw;
+        right: 20vw;
+        writing-mode: vertical-rl;
+        color: #fff;
+        z-index: 2;
+    }
+    .concept-quality p:nth-child(1) {
+        font-size: 4vw;
+        margin-right: 3vw;
+    }
+    .concept-quality p:nth-child(2) {
+        font-size: 2vw;
+    }
+    .concept-quality::before {
+        background: rgba(255, 255, 255, .2);/* マスクの色(黒の50%) */
+        bottom: 0;
+        content: '';
+        height: auto;
+        left: 0;
+        opacity: 0;/* 最初は透明（非表示） */
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity .6s ease;/* ゆっくりopacityのみへ変化させる */
+        width: 100%;
+        z-index: 1;
+    }
+    .concept-quality:hover::before {
+        opacity: 1;
+    }
+    /*三つ目*/
+    .concept-number {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        text-decoration: none;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        margin-left: 48vw;
+        margin-top: -10vw;
+    }
+    .concept-number-text {
+        display: flex;
+        height: 50vw;
+        width: 50vw;
+        background-image: url(../image/index_philosophy_3.jpg);
+        background-size: cover;
+        border-radius: 50%;
+        transition: transform .6s ease;
+    }
+    .concept-number:hover .concept-number-text {
+        transform: scale(1.1);
+    }
+    .concept-number p {
+        position: absolute;
+        top: 17vw;
+        right: 17vw;
+        writing-mode: vertical-rl;
+        color: #fff;
+        z-index: 2;
+    }
+    .concept-number p:nth-child(1) {
+        font-size: 4vw;
+        margin-right: 3vw;
+    }
+    .concept-number p:nth-child(2) {
+        font-size: 2vw;
+    }
+    .concept-number::before {
+        background: rgba(255, 255, 255, .2);/* マスクの色(黒の50%) */
+        bottom: 0;
+        content: '';
+        height: auto;
+        left: 0;
+        opacity: 0;/* 最初は透明（非表示） */
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity .6s ease;/* ゆっくりopacityのみへ変化させる */
+        width: 100%;
+        z-index: 1;
+    }
+    .concept-number:hover::before {
+        opacity: 1;
+    }
+    /*四つ目*/
+    .concept-collabo {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        overflow: hidden;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        margin-left: 3vw;
+        margin-top: -12vw;
+    }
+    .concept-collabo-text {
+        display: flex;
+        height: 50vw;
+        width: 50vw;
+        background-image: url(../image/index_philosophy_4.jpg);
+        background-size: cover;
+        border-radius: 50%;
+         transition: transform .6s ease;
+    }
+    .concept-collabo:hover .concept-collabo-text {
+        transform: scale(1.1);
+    }
+    .concept-collabo p {
+        position: absolute;
+        top: 17vw;
+        right: 15.5vw;
+        writing-mode: vertical-rl;
+        color: #fff;
+        z-index: 2;
+    }
+    .concept-collabo p:nth-child(1) {
+        font-size: 4vw;
+        margin-right: 3vw;
+    }
+    .concept-collabo p:nth-child(2) {
+        font-size: 2vw;
+    }
+    .concept-collabo::before {
+        background: rgba(255, 255, 255, .2);/* マスクの色(黒の50%) */
+        bottom: 0;
+        content: '';
+        height: auto;
+        left: 0;
+        opacity: 0;/* 最初は透明（非表示） */
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity .6s ease;/* ゆっくりopacityのみへ変化させる */
+        width: 100%;
+        z-index: 1;
+    }
+    .concept-collabo:hover::before {
+        opacity: 1;
+    }
+    
+    /*インタビュー*/
+    .interview {
+        position: relative;
+        margin-top: 10vw;
+        padding-top: 5vw;
+        margin-bottom: 10vw;
+        padding-bottom: 5vw;
+        background-color: #f3f2e6;
+        background: linear-gradient(to right, #f3f2e6 0%, #f3f2e6 95%, #fff 95%,  #fff 100%);
+    }
+    .interview-right-box {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .interview-main {
+        display: flex;
+        margin-top: 3vw;
+    }
+    
+    .interview-title {
+        position: absolute;
+        top: 5vw;
+        left: 1vw;
+        display: flex;
+    }
+    .interview-title h6 {
+        writing-mode: vertical-rl;
+        font-size: 5vw;
+        letter-spacing: .1em;
+        font-weight: 600;
+    }
+    .interview-title p {
+        writing-mode: vertical-rl;
+        font-size: 0.8vw;
+    }
+    .interview-content {
+        margin-right: 5vw;
+    }
+    .interview-text {
+        display: flex;
+    }
+    .interview-text p {
+        font-size: 4vw;
+        writing-mode: vertical-rl;
+        letter-spacing: .1em;
+        line-height: 6vw;
+    }
+    .interview-right-box img:nth-child(2) {
+        width: 34vw;
+        height: 24vw;
+        margin-top: 2vw;
+        margin-right: auto;
+    }
+    .interview-next {
+        margin-top: 4vw;
+        margin-left: 7vw;
+    }
+    /*ホバー　ボーダー*/
+    .interview-next a {
+        position: relative;
+        display: block;
+        display: flex;
+        width: 18vw;
+        text-decoration: none;
+        color: #000;
+        border-top: 1px solid transparent;
+    }
+    .interview-next a::after {
+        content: '';
+        /*絶対配置で線の位置を決める*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*線の形状*/
+        width: 100%;
+        height: 1px;
+        background:#000;
+        /*アニメーションの指定*/
+        transition: all .3s;
+        transform: scale(0, 1);/*X方向0、Y方向1*/
+        transform-origin: left top;/*左上基点*/
+    }
+     /*現在地を含むhoverの設定*/
+    .interview-next a:hover::after {
+        transform: scale(1, 1);/*X方向にスケール拡大*/
+    }
+    .interview-next a p {
+        font-size: 3.5vw;
+        line-height: 2.5em;
+        margin-left: 1vw;
+    }
+    /*矢印　ホバーアニメーション*/
+    .interview-next a img {
+        width: 4vw;
+        overflow: hidden;
+        object-position : right 50%;
+        transition: .3s;
+        margin-bottom: 0.3vw;
+        margin-left: 0.5vw;
+    }
+    .interview-next a:hover img {
+        /*width: 5vw;
+        height: 0.5vw;*/
+        transition: .3s;
+        transform: translateX(20px);
+    }
+    .interview-left-box {
+        width: 85vw;
+        margin-left: auto;
+    }
+    .interview-left-box img {
+        width: 100%;
+    }
+    /*くらしこクリップ*/
+    .clip {
+            display: flex;
+            margin-bottom: 10vw;
+        }
+        .clip-title {
+            display: flex;
+            margin-left: 1.5vw;
+        }
+        .clip-title h7 {
+            writing-mode: vertical-rl;
+            font-size: 5vw;
+            letter-spacing: .1em;
+            font-weight: 600;
+        }
+        .clip-title p {
+            writing-mode: vertical-rl;
+            font-size: 0.8vw;
+        }
+        /*記事の調整*/
+        .clip-article {
+            display: flex;
+            width: 85vw;
+            margin-left: 2vw;
+            margin-bottom: 3.5vw;
+            display: grid;
+            grid-template-columns: 42vw 42vw;
+        }
+        .clip-article a {
+            position: relative;
+            text-decoration: none;
+            display: block;
+            height: 50vw;
+            padding-bottom: 1vw;
+        }
+        .clip-article a img {
+            width: 100%;
+            height: 30vw;
+            border-bottom: 4px solid transparent;
+        }
+        .clip-article a p {
+            width: 40vw;
+            color: gray;
+            font-size: 1.8vw;
+            line-height: 4vw;
+        }
+        .clip-article a p strong {
+            color: #000;
+        }
+
+         /*ホバーアニメーション*/
+        .clip-article a::after {
+            content: '';
+            /*絶対配置で線の位置を決める*/
+            position: absolute;
+            top: 35vw;
+            left: 0;
+            /*線の形状*/
+            width: 100%;
+            height: 4px;
+            background:#000;
+            /*アニメーションの指定*/
+            transition: all .3s;
+            transform: scale(0, 1);/*X方向0、Y方向1*/
+            transform-origin: left top;/*左上基点*/
+        }
+
+        /*現在地を含むhoverの設定*/
+        .clip-article a:hover::after {
+            transform: scale(1, 1);/*X方向にスケール拡大*/
+        }
+        /*アニメーション　終了*/
+
+        /*クリップネクスト　ホバー*/
+        .clip-next {
+            width: 11vw;
+            margin-left: auto;
+            margin-right: 5vw;
+            margin-top: 5vw;
+        }
+        /*ホバー　ボーダー*/
+        .clip-next a {
+            position: relative;
+            display: block;
+            display: flex;
+            width: 15vw;
+            text-decoration: none;
+            color: #000;
+            border-top: 1px solid transparent;
+        }
+        .clip-next a::after {
+            content: '';
+            /*絶対配置で線の位置を決める*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*線の形状*/
+            width: 100%;
+            height: 1px;
+            background:#000;
+            /*アニメーションの指定*/
+            transition: all .3s;
+            transform: scale(0, 1);/*X方向0、Y方向1*/
+            transform-origin: left top;/*左上基点*/
+        }
+         /*現在地を含むhoverの設定*/
+        .clip-next a:hover::after {
+            transform: scale(1, 1);/*X方向にスケール拡大*/
+        }
+        .clip-next a p {
+            font-size: 2vw;
+            line-height: 2.5em;
+            margin-left: 1vw;
+        }
+        /*矢印　ホバーアニメーション*/
+        .clip-next a img {
+            width: 4vw;
+            overflow: hidden;
+            object-position : right 50%;
+            transition: .3s;
+            margin-bottom: 0.3vw;
+            margin-left: 0.5vw;
+        }
+        .clip-next a:hover img {
+            /*width: 5vw;
+            height: 0.5vw;*/
+            transition: .3s;
+            transform: translateX(20px);
+        }
+    /*100年の歴史*/
+    .history {
+        position: relative;
+        margin-top: 8vw;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+        margin-bottom: 8vw;
+        background: linear-gradient(to right, #fff 0%, #fff 10%, #e0ece8 10%,  #e0ece8 100%);
+    }
+    .history-right-box {
+        display: flex;
+    }
+    .history-main {
+        display: flex;
+        width: 22vw;
+        margin-top: 3vw;
+    }
+    .history-content {
+        margin-left: 8vw;
+    }
+    .history-title {
+        position: absolute;
+        top: 5vw;
+        right: 0;
+        display: flex;
+    }
+    .history-title h8 {
+        writing-mode: vertical-rl;
+        font-size: 5vw;
+        letter-spacing: .1em;
+        font-weight: 600;
+    }
+    .history-title p {
+        writing-mode: vertical-rl;
+        font-size: 0.8vw;
+    }
+    .history-text {
+        display: flex;
+        margin-right: 5vw;
+    }
+    .history-text p {
+        font-size: 4vw;
+        writing-mode: vertical-rl;
+        letter-spacing: .1em;
+        line-height: 3.5vw;
+        line-height: 6vw;
+    }
+    .history-right-box img:nth-child(2) {
+        width: 34vw;
+        height: 24vw;
+        margin-top: 7vw;
+        margin-left: auto;
+    }
+    .history-next {
+        margin-left: 2vw;
+        margin-top: 4vw;
+    }
+    /*ホバー　ボーダー*/
+    .history-next a {
+        position: relative;
+        display: block;
+        display: flex;
+        width: 18vw;
+        text-decoration: none;
+        color: #000;
+        border-top: 1px solid transparent;
+    }
+    .history-next a::after {
+        content: '';
+        /*絶対配置で線の位置を決める*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*線の形状*/
+        width: 100%;
+        height: 1px;
+        background:#000;
+        /*アニメーションの指定*/
+        transition: all .3s;
+        transform: scale(0, 1);/*X方向0、Y方向1*/
+        transform-origin: left top;/*左上基点*/
+    }
+    
+    /*現在地を含むhoverの設定*/
+    .history-next a:hover::after {
+        transform: scale(1, 1);/*X方向にスケール拡大*/
+    }
+    .history-next a p {
+        font-size: 3.5vw;
+        line-height: 2.5em;
+        margin-left: 1vw;
+    }
+    
+    /*矢印　ホバーアニメーション*/
+    .history-next a img {
+        width: 4vw;
+        overflow: hidden;
+        object-position : right 50%;
+        transition: .3s;
+        margin-bottom: 0.3vw;
+        margin-left: 0.5vw;
+    }
+    .history-next a:hover img {
+        /*width: 5vw;
+        height: 0.5vw;*/
+        transition: .3s;
+        transform: translateX(20px);
+    }
+    
+    .history-left-box img {
+        width: 85vw;
+    }
+    
+    /*フッター部分*/
+    footer {
+        position: relative;
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5vw;
+        text-align: center;
+    }
+    footer:before {
+        background-color: rgba(0,0,0,.1);
+        content: "";
+        display: block;
+        height: 0.1vw;
+        left: calc(72% - 100px);
+        position: absolute;
+        top: 0;
+        width: 30vw;
+    }
+    .footer-logo {
+        display: block;
+        padding-top: 10vw;
+        margin-bottom: 10vw;
+    }
+    .footer-logo a img {
+        width: 55vw;
+    }
+    .footer-logo .sns {
+        position: absolute;
+        bottom: 18vw;
+        left: 6vw;
+    }
+    .footer-logo .sns a img {
+        width: 5vw;
+        vertical-align: middle;
+        padding-right: 0.5vw;
+    }
+    .footer-logo .sns a {
+        text-decoration: none;
+        color: #000;
+        margin-right: 1vw;
+        font-size: 3vw;
+    }
+    footer .contact {
+        margin-bottom: 10vw;
+    }
+    footer .contact h9 {
+        font-size: 5vw;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+        line-height: 2em;
+    }
+    .contact-wrapper {
+        display: block;
+        margin-top: 2vw;
+    }
+    .contact-wrapper p {
+        margin-bottom: 1vw;
+    }
+    .contact-wrapper .contact-box {
+        margin-bottom: 3vw;
+    }
+    .footer-navi {
+        margin-bottom: 5vw;
+    }
+    .footer-navi nav ul {
+        display: flex;
+        margin-top: 20vw;
+        width: 70vw;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+    .footer-navi nav ul li {
+        list-style-type: none;
+        margin-left: 2vw;
+    }
+    .footer-navi nav ul li+ li {
+        border-left: 1px solid #000;
+        padding-left: 2vw;
+    }
+    .footer-navi nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        padding-right: 1vw;
+        font-size: 3.5vw;
+    }
+
+
+}
