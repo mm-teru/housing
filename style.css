@@ -209,7 +209,7 @@
     }
     .slide:before {
         animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
-        background-image: url(../image/fvimg_1-2.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/fvimg_1-2.jpg);
         background-size: cover;
         bottom: 0;
         content: '';
@@ -274,7 +274,7 @@
     
     .slide2:before {
         animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
-        background-image: url(../image/fvimg_2-2.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/fvimg_2-2.jpg);
         background-size: cover;
         bottom: 0;
         content: '';
@@ -331,7 +331,7 @@
     }
     .second-slide:before {
         animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
-        background-image: url(../image/fvimg_3-3.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/fvimg_3-3.jpg);
         background-size: cover;
         bottom: 0;
         content: '';
@@ -368,7 +368,7 @@
     }
     .second-slide2:before {
         animation: img-wrap 10s cubic-bezier(.4, 0, .2, 1) infinite;
-        background-image: url(../image/fvimg_4-1.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/fvimg_4-1.jpg);
         background-size: cover;
         bottom: 0;
         content: '';
@@ -650,7 +650,7 @@
     }
     /*コンセプト部分*/
     .concept {
-        background-image: url(../image/index_philosophy_bg.png);
+        background-image: url(https://mm-teru.github.io/housing/image/index_philosophy_bg.png);
         background-size: 50vw 50vw;
         background-repeat: no-repeat;
         margin-left: 7.5vw;
@@ -717,7 +717,7 @@
         padding-left: 10vw;
         height: 25vw;
         width: 15vw;
-        background-image: url(../image/index_philosophy_1.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/index_philosophy_1.jpg);
         background-size: cover;
         border-radius: 50%;
         transition: transform .6s ease;
@@ -775,7 +775,7 @@
         padding-left: 10vw;
         height: 25vw;
         width: 15vw;
-        background-image: url(../image/index_philosophy_2.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/index_philosophy_2.jpg);
         background-size: cover;
         border-radius: 50%;
         transition: transform .6s ease;
@@ -833,7 +833,7 @@
         padding-left: 9vw;
         height: 25vw;
         width: 16vw;
-        background-image: url(../image/index_philosophy_3.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/index_philosophy_3.jpg);
         background-size: cover;
         border-radius: 50%;
         transition: transform .6s ease;
@@ -891,7 +891,7 @@
         padding-left: 7vw;
         height: 25vw;
         width: 18vw;
-        background-image: url(../image/index_philosophy_4.jpg);
+        background-image: url(https://mm-teru.github.io/housing/image/index_philosophy_4.jpg);
         background-size: cover;
         border-radius: 50%;
          transition: transform .6s ease;
